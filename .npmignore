@@ -1,0 +1,7 @@
+__tests__
+coverage
+.DS_Store
+*.log
+.gitignore
+.npmignore
+jest.config.js 
