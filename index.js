@@ -5,6 +5,10 @@ const t = require('@babel/types');
 
 function removeDebugCode(sourceCode) {
   const options = this.getOptions() || {};
+  
+  if (options.enabled === false) {
+    return sourceCode;
+  }
 
   try {
     const ast = parser.parse(sourceCode, {
