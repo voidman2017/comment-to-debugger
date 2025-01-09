@@ -1,6 +1,6 @@
 {
   "name": "comment-to-debugger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "converts specific comments to debugger statements for easier debugging",
   "main": "index.js",
   "scripts": {

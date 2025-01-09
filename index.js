@@ -22,8 +22,14 @@ function removeDebugCode(sourceCode) {
         return (comment) => options.validator(comment);
       }
       
-      if (options.pattern instanceof RegExp) {
-        return (comment) => options.pattern.test(comment.value.trim());
+      if (options.pattern) {
+        const patterns = Array.isArray(options.pattern) ? options.pattern : [options.pattern];
+        return (comment) => patterns.some(pattern => {
+          if (pattern instanceof RegExp) {
+            return pattern.test(comment.value.trim());
+          }
+          return false;
+        });
       }
       
       return (comment) => comment.value.trim().includes('@debug');
