@@ -14,7 +14,7 @@ function removeDebugCode(sourceCode) {
     const ast = parser.parse(sourceCode, {
       sourceType: 'module',
       comments: true,
-      plugins: ['jsx', 'typescript', 'decorators-legacy']
+      plugins: ['jsx', 'typescript', 'decorators-legacy', 'classProperties']
     });
 
     const getCommentValidator = () => {
@@ -109,4 +109,4 @@ module.exports = function(sourceCode) {
 };
 
 // 导出Vite插件创建函数
-module.exports.vite = createVitePlugin; 
+module.exports.vite = createVitePlugin;
